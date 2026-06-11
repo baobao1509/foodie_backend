@@ -1,9 +1,14 @@
 package com.Event_Booking.event_booking.DTO.Menu;
 
+import lombok.Builder;
+import lombok.Data;
+
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 
+@Data
+@Builder
 public class MenuItemResponseDTO {
     private UUID id;
     private String name;

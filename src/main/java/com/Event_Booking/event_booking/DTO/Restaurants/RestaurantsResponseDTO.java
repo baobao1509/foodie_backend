@@ -2,13 +2,16 @@ package com.Event_Booking.event_booking.DTO.Restaurants;
 import java.math.BigDecimal;
 import java.time.Instant;
 import java.time.LocalTime;
+import java.time.OffsetDateTime;
 import java.util.UUID;
 
 import com.Event_Booking.event_booking.enums.AccountStatus;
 import jakarta.validation.constraints.*;
+import lombok.Builder;
 import lombok.Data;
 
 @Data
+@Builder
 public class RestaurantsResponseDTO {
 
     private UUID id;
@@ -32,13 +35,11 @@ public class RestaurantsResponseDTO {
     private Integer totalReviews;
     private Boolean isOpen;
     private AccountStatus status;
-    private Instant createdAt;
+    private OffsetDateTime createdAt;
 
     // Chỉ id + tên của owner — KHÔNG phải cả object User
     private UUID ownerId;
     private String ownerName;
     private String ownerPhone;
 
-    // Menu theo danh mục — trả về luôn khi xem chi tiết
-    //private List<CategoryWithItemsResponse> categories;
 }
